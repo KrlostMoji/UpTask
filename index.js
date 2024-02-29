@@ -37,7 +37,7 @@ const corsOptions =
   }
 }
 
-app.use(cors(corsOptions))
+app.use(cors({origin: '*'}))
 
 //Routing
 app.use
@@ -70,7 +70,7 @@ import { Server } from 'socket.io';
 const io = new Server(servidor, {
   pingTimeout: 60000,
   cors: {
-    origin: process.env.FRONTEND_URL,
+    origin: '*',
   }
 })
 
